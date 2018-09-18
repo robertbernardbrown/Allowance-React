@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Main from "./pages/Main";
+import { BrowserRouter as Router, Link, Switch} from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <Switch>
+            <Main exact path="/"></Main>
+            {/* <PropsRoute exact path="/" component={Main}/>
+            <PropsRoute exact path="/about" component={About} />
+            <PrivateRoute exact path="/budgets" component={Leaderboard} />
+            <PropsRoute exact path="/transactions" component={Contact} />
+            <LoggedOutRoute path="/signup" component={SignupPage} toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
+            <PropsRoute path="/logout" component={LogoutFunction} toggleAuthenticateStatus={this.toggleAuthenticateStatus}/> */}
+          </Switch>
+      </Router>
     );
   }
 }
