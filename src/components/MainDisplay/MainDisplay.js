@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { media } from "../../styles/utils";
+import { media } from "../../utils/styles";
 
 const Container = styled.section`
 background: rgba(255,255,255,.9);
