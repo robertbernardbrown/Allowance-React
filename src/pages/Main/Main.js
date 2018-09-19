@@ -10,7 +10,7 @@ class Main extends Component {
     }
 
     componentDidMount(){
-        API.getBudget(this.props.token)
+        API.getBudget(this.props.token, this.props.userId)
         .then(res => {
             console.log(res);
             this.setState({
