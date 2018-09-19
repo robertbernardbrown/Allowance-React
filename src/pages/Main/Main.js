@@ -7,19 +7,23 @@ class Main extends Component {
 
     state = {
         data: "",
-        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R0ZXN0QHRlc3QuY29tIiwidXNlcklkIjoxOSwiaWF0IjoxNTM3MzgzNDQ0LCJleHAiOjE1MzczODcwNDR9.NOZ3TmRx8TNV1Qze_8Zq638OG2HhTQ9dq9hi2yir88g"
+        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R0ZXN0QHRlc3QuY29tIiwidXNlcklkIjoxOSwiaWF0IjoxNTM3MzkxMzU1LCJleHAiOjE1MzczOTQ5NTV9.FTyJk6AS9qhcQ42o940Ia0uE30Goj3QumQONHbZCCOM"
     }
 
     componentDidMount(){
-        console.log("mounter")
         axios.get("https://allowance-api.herokuapp.com/api/budgets/1", {headers: {Authorization: `bearer ${this.state.token}`}})
-        .then( res => {
+        .then(res => {
             console.log(res);
             this.setState({
                 data: res.data.message
-            }, console.log(this.state.data))
+            })
             // let dataArr = [];
             // res.map(cur=>{ return dataArr.push(cur);})
+        })
+        .catch(err => {
+            this.setState({
+                data: err.message
+            })
         })
     }
 
