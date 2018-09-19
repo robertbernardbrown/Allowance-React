@@ -1,21 +1,6 @@
-import React, { Component } from 'react';
-import styled, { css } from "styled-components";
-
-const sizes = {
-  desktop: 992,
-  tablet: 768,
-  phone: 576,
-}
-
-// Iterate through the sizes and create a media template
-const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media (min-width: ${sizes[label]}px) {
-      ${css(...args)}
-    }
-  `
-  return acc
-}, {})
+import React from "react";
+import styled from "styled-components";
+import { media } from "../../styles/utils";
 
 const Title = styled.h1`
   font-size: 3em;
@@ -31,19 +16,17 @@ const Title = styled.h1`
 `;
 
 const Header = styled.header`
-  padding: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
-class App extends Component {
-    render() {
-      return (
-        <Header>
-          <Title>
-            Allowance
-          </Title>
-        </Header>
-      );
-    }
-}
+const HeaderComp = () => (
+  <Header>
+    <Title>
+      Allowance
+    </Title>
+  </Header>
+);
 
-export default App;
+export default HeaderComp;
