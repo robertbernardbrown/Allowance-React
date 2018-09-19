@@ -14,17 +14,14 @@ ${media.desktop``}
 
 const Inner = styled.section`
 background: rgba(255,255,255,.9);
-${media.phone`
-background: black;`}
-${media.tablet`
-background: black;`}
-${media.desktop`
-background: black;`}
+${media.phone``}
+${media.tablet``}
+${media.desktop``}
 `;
 
-const MainDisplay = () => (
+const MainDisplay = (props) => (
     <Container>
-        <Inner>Hi there</Inner>
+        {<Inner>{props.budget}</Inner>}
     </Container>
 )
 
