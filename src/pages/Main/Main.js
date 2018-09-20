@@ -5,6 +5,8 @@ import API from "../../utils/API";
 import styled from "styled-components";
 import { media } from "../../utils/styles";
 import BarChart from "../../components/BarChart";
+import BudgetAdder from "../../components/BudgetAdder";
+import TransactionAdder from "../../components/TransactionAdder";
 
 const Inner = styled.section`
 background: rgba(255,255,255,.9);
@@ -41,8 +43,8 @@ class Main extends Component {
             <React.Fragment>
                 <Header/>
                 <Display budget={this.state.budgets} component={BarChart}/>
-                <Display component={Inner}/>
-                <Display component={Inner}/>
+                <Display component={BudgetAdder}/>
+                <Display component={TransactionAdder}/>
             </React.Fragment>
         )
     }

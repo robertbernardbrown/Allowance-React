@@ -6,6 +6,7 @@ const Container = styled.section`
 background: rgba(255,255,255,.9);
 width: 80%;
 height: 100%;
+margin: 10px;
 display: inline-block;
 ${media.phone``}
 ${media.tablet``}
