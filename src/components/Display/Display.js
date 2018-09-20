@@ -8,6 +8,7 @@ width: 80%;
 height: 100%;
 margin: 10px;
 display: inline-block;
+border-radius: 10px;
 ${media.phone``}
 ${media.tablet``}
 ${media.desktop``}

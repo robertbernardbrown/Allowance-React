@@ -8,13 +8,6 @@ import BarChart from "../../components/BarChart";
 import BudgetAdder from "../../components/BudgetAdder";
 import TransactionAdder from "../../components/TransactionAdder";
 
-const Inner = styled.section`
-background: rgba(255,255,255,.9);
-${media.phone``}
-${media.tablet``}
-${media.desktop``}
-`;
-
 class Main extends Component {
 
     state = {
