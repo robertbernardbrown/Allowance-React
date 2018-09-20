@@ -1,12 +1,22 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
-import MainDisplay from "../../components/MainDisplay";
+import Display from "../../components/Display";
 import API from "../../utils/API";
+import styled from "styled-components";
+import { media } from "../../utils/styles";
+import BarChart from "../../components/BarChart";
+
+const Inner = styled.section`
+background: rgba(255,255,255,.9);
+${media.phone``}
+${media.tablet``}
+${media.desktop``}
+`;
 
 class Main extends Component {
 
     state = {
-        data: "",
+        budgets: "",
     }
 
     componentDidMount(){
@@ -14,14 +24,14 @@ class Main extends Component {
         .then(res => {
             console.log(res);
             this.setState({
-                data: res.data.message
+                budgets: res.data.message
             })
             // let dataArr = [];
             // res.map(cur=>{ return dataArr.push(cur);})
         })
         .catch(err => {
             this.setState({
-                data: err.message
+                budgets: err.message
             })
         })
     }
@@ -30,7 +40,9 @@ class Main extends Component {
         return(
             <React.Fragment>
                 <Header/>
-                <MainDisplay budget={this.state.data}/>
+                <Display budget={this.state.budgets} component={BarChart}/>
+                <Display component={Inner}/>
+                <Display component={Inner}/>
             </React.Fragment>
         )
     }

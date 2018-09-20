@@ -12,17 +12,10 @@ ${media.tablet``}
 ${media.desktop``}
 `;
 
-const Inner = styled.section`
-background: rgba(255,255,255,.9);
-${media.phone``}
-${media.tablet``}
-${media.desktop``}
-`;
-
-const MainDisplay = (props) => (
+const Display = ({ component: Component, ...rest }) => (
     <Container>
-        {<Inner>{props.budget}</Inner>}
+        <Component {...rest}/>
     </Container>
 )
 
-export default MainDisplay;
+export default Display;
