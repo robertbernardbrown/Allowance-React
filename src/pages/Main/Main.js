@@ -1,25 +1,33 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
-import MainDisplay from "../../components/MainDisplay";
-import axios from "axios";
+import Display from "../../components/Display";
+import API from "../../utils/API";
+import styled from "styled-components";
+import { media } from "../../utils/styles";
+import BarChart from "../../components/BarChart";
+import BudgetAdder from "../../components/BudgetAdder";
+import TransactionAdder from "../../components/TransactionAdder";
 
 class Main extends Component {
 
     state = {
-        data: "",
-        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R0ZXN0QHRlc3QuY29tIiwidXNlcklkIjoxOSwiaWF0IjoxNTM3MzgzNDQ0LCJleHAiOjE1MzczODcwNDR9.NOZ3TmRx8TNV1Qze_8Zq638OG2HhTQ9dq9hi2yir88g"
+        budgets: "",
     }
 
     componentDidMount(){
-        console.log("mounter")
-        axios.get("https://allowance-api.herokuapp.com/api/budgets/1", {headers: {Authorization: `bearer ${this.state.token}`}})
-        .then( res => {
+        API.getBudget(this.props.token, this.props.userId)
+        .then(res => {
             console.log(res);
             this.setState({
-                data: res.data.message
-            }, console.log(this.state.data))
+                budgets: res.data.message
+            })
             // let dataArr = [];
             // res.map(cur=>{ return dataArr.push(cur);})
+        })
+        .catch(err => {
+            this.setState({
+                budgets: err.message
+            })
         })
     }
 
@@ -27,7 +35,9 @@ class Main extends Component {
         return(
             <React.Fragment>
                 <Header/>
-                <MainDisplay budget={this.state.data}/>
+                <Display budget={this.state.budgets} component={BarChart}/>
+                <Display component={BudgetAdder}/>
+                <Display component={TransactionAdder}/>
             </React.Fragment>
         )
     }
