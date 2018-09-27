@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import Header from "./components/Header";
 import Main from "./pages/Main";
+import Welcome from "./pages/Welcome";
 import { BrowserRouter as Router, Link, Switch} from "react-router-dom";
 
 class App extends Component {
@@ -11,9 +13,12 @@ class App extends Component {
 
   render() {
     return (
+      <React.Fragment>
+      <Header/>
       <Router>
         <Switch>
-            <Main token={this.state.token} exact path="/"></Main>
+            <Welcome exact path="/"></Welcome>
+            <Main exact path="/main" token={this.state.token} ></Main>
             {/* <PropsRoute exact path="/" component={Main}/>
             <PropsRoute exact path="/about" component={About} />
             <PrivateRoute exact path="/budgets" component={Leaderboard} />
@@ -22,6 +27,7 @@ class App extends Component {
             <PropsRoute path="/logout" component={LogoutFunction} toggleAuthenticateStatus={this.toggleAuthenticateStatus}/> */}
           </Switch>
       </Router>
+      </React.Fragment>
     );
   }
 }
