@@ -1,27 +1,32 @@
-import React, { Component } from 'react';
+import React from "react";
 import styled from "styled-components";
+import { media } from "../../styles/utils";
 
 const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 3em;
   text-align: center;
-  color: palevioletred;
+  color: green;
+  background: rgba(255,255,255,.9);
+  ${media.phone`
+  font-size: 5em`}
+  ${media.tablet`
+  font-size: 5em`}
+  ${media.desktop`
+  font-size: 5em`}
 `;
 
 const Header = styled.header`
-  padding: 4em;
-  background: papayawhip;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
-class App extends Component {
-    render() {
-      return (
-        <Header>
-          <Title>
-            Hello World, this is my first styled component!
-          </Title>
-        </Header>
-      );
-    }
-}
+const HeaderComp = () => (
+  <Header>
+    <Title>
+      Allowance
+    </Title>
+  </Header>
+);
 
-export default App;
+export default HeaderComp;
