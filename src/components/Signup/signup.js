@@ -12,32 +12,32 @@ const SignUpForm = ({onSubmit,onChange,errors,user}) => (
 
         <div className="field-line">
           <input
-              placeholder={errors.name ? errors.name.toString() : "Name"}
-              name="name"
-              className={errors.name ? "has-error" : ""}
+              placeholder={errors.userName ? errors.userName.toString() : "Username"}
+              name="userName"
+              className={errors.userName ? "has-error" : ""}
               onChange={onChange}
-              value={user.name}
+              value={user.userName}
           />
         </div>
 
         <div className="field-line">
           <input
-              placeholder={errors.email ? errors.email.toString() : "Email"}
-              name="email"
-              className={errors.email ? "has-error" : ""}
+              placeholder={errors.userEmail ? errors.userEmail.toString() : "Email"}
+              name="userEmail"
+              className={errors.userEmail ? "has-error" : ""}
               onChange={onChange}
-              value={user.email}
+              value={user.userEmail}
           />
         </div>
 
         <div className="field-line">
           <input
-              placeholder={errors.password ? errors.password.toString() : "Password"}
+              placeholder={errors.userPassword ? errors.userPassword.toString() : "Password"}
               type="password"
-              name="password"
+              name="userPassword"
               onChange={onChange}
-              className={errors.password ? "has-error" : ""}
-              value={user.password}
+              className={errors.userPassword ? "has-error" : ""}
+              value={user.userPassword}
           />
         </div>
 

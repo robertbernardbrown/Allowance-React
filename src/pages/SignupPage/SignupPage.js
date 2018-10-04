@@ -8,9 +8,9 @@ class SignupPage extends React.Component {
   state = {
     errors: {},
     user: {
-      email: '',
-      name: '',
-      password: ''
+      userEmail: '',
+      userName: '',
+      userPassword: ''
     }
   }
 
@@ -22,16 +22,16 @@ class SignupPage extends React.Component {
     event.preventDefault();
     
     // create a string for an HTTP body message
-    const { name, email, password } = this.state.user;
+    const { userName, userEmail, userPassword } = this.state.user;
 
-    API.signUp({name, email, password}).then(res => {
+    API.signUp({userName, userEmail, userPassword}).then(res => {
         localStorage.setItem('successMessage', res.data.message);
 
-        // redirect user after sign up to login page
-        this.props.history.push('/');
         this.setState({
           errors: {}
         });
+        // redirect user after sign up to login page
+        this.props.history.push('/');
 
     }).catch(( {response} ) => {
         const errors = response.data.errors ? response.data.errors : {};

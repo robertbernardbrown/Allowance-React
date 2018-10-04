@@ -12,9 +12,7 @@ import { BrowserRouter as Router, Link, Switch} from "react-router-dom";
 class App extends Component {
 
   state = {
-    authenticated: false,
-    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R0ZXN0QHRlc3QuY29tIiwidXNlcklkIjoxOSwiaWF0IjoxNTM3Mzk5MDQ1LCJleHAiOjE1Mzc0MDI2NDV9.8tPb2MKm7mFcIf4K7O8nDSp4zS2Ml1uhAKPdOD5UvoA",
-    userId: 1
+    authenticated: false
   }
 
   componentDidMount() {
