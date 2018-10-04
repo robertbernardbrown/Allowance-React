@@ -42,9 +42,6 @@ class LoginPage extends Component {
 
         // redirect signed in user to dashboard
         this.props.history.push('/');
-        this.setState({
-          errors: {}
-        });
     })
     .catch(( {response} ) => {
         const errors = response.data.errors ? response.data.errors : {};

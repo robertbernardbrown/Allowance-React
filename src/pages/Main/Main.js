@@ -37,6 +37,8 @@ class Main extends Component {
                 <Display budget={this.state.budgets} component={BarChart}/>
                 <Display component={BudgetAdder}/>
                 <Display component={TransactionAdder}/>
+                <br/>
+                <a href="/logout">Logout</a>
             </React.Fragment>
         )
     }

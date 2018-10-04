@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import Main from "./pages/Main";
 import Welcome from "./pages/Welcome";
+import LogoutFunction from "./components/LogoutFunction";
 import Auth from "./utils/Auth";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
@@ -39,6 +40,7 @@ class App extends Component {
                                       authenticated={this.state.authenticated}/>
             <LoggedOutRoute path="/signup" component={SignupPage} 
                                             toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
+            <PropsRoute path="/logout" component={LogoutFunction} toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
             {/* <PropsRoute exact path="/about" component={About} />
             <PrivateRoute exact path="/budgets" component={Leaderboard} />
             <PropsRoute exact path="/transactions" component={Contact} />
