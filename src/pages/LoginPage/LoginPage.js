@@ -10,8 +10,8 @@ class LoginPage extends Component {
     errors: {},
     successMessage: '',
     user: {
-      email: '',
-      password: ''
+      userEmail: '',
+      userPassword: ''
     }
   }
   
@@ -32,9 +32,9 @@ class LoginPage extends Component {
    */
   processForm = event => {
     event.preventDefault();
-    const { email, password } = this.state.user;
- 
-    API.login({email, password}).then(res => {
+    const { userEmail, userPassword } = this.state.user;
+
+    API.login({userEmail, userPassword}).then(res => {
 
         Auth.authenticateUser(res.data.token);
 

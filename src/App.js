@@ -35,7 +35,8 @@ class App extends Component {
             {/* <Welcome exact path="/"></Welcome>
             <Main exact path="/main" token={this.state.token} ></Main> */}
             <PropsRoute exact path="/" component={this.state.authenticated ? Main : LoginPage}
-                                      toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
+                                      toggleAuthenticateStatus={this.toggleAuthenticateStatus}
+                                      authenticated={this.state.authenticated}/>
             <LoggedOutRoute path="/signup" component={SignupPage} 
                                             toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
             {/* <PropsRoute exact path="/about" component={About} />

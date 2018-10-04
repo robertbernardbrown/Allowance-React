@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const LoginForm = ({onSubmit,onChange,errors,successMessage,user,toggleAuthenticateStatus,setUser,authenticated}) => (
+const LoginForm = ({onSubmit,onChange,errors,successMessage,user}) => (
   <div className="inner-display-div">
     <h2 className="login-heading">Login</h2>
     <form action="/" onSubmit={onSubmit}>
@@ -12,22 +12,22 @@ const LoginForm = ({onSubmit,onChange,errors,successMessage,user,toggleAuthentic
 
       <div className="field-line">
         <input
-            placeholder={errors.email ? errors.email.toString() : "Email"}
-            name="email"
-            className={errors.email ? "has-error" : ""}
+            placeholder={errors.userEmail ? errors.userEmail.toString() : "Email"}
+            name="userEmail"
+            className={errors.userEmail ? "has-error" : ""}
             onChange={onChange}
-            value={user.email}
+            value={user.userEmail}
         />
       </div>
 
       <div className="field-line">
         <input
-            placeholder={errors.password ? errors.password.toString() : "Password"}
+            placeholder={errors.userPassword ? errors.userPassword.toString() : "Password"}
             type="password"
-            name="password"
+            name="userPassword"
             onChange={onChange}
-            className={errors.password ? "has-error" : ""}
-            value={user.password}
+            className={errors.userPassword ? "has-error" : ""}
+            value={user.userPassword}
         />
       </div>
 
