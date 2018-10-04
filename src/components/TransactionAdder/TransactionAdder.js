@@ -46,11 +46,11 @@ const nextFiveYears = () => {
 const TransactionAdder = (props) => (
     <TransactionAdderDiv>
         <TransactionAdderInput>
-            <label for="transactionInput" style={{paddingRight:"10px"}}> Transaction: </label>
+            <label htmlFor="transactionInput" style={{paddingRight:"10px"}}> Transaction: </label>
             <input type="text" style={{width:"100%"}} name="transaction" placeholder="0" className="transactionInput" id="transactionInput"></input>
         </TransactionAdderInput>
         <TransactionAdderInput>
-            <label for="monthInput" style={{paddingRight:"10px"}}> Month: </label>
+            <label htmlFor="monthInput" style={{paddingRight:"10px"}}> Month: </label>
             <select id="monthInput" style={{width:"100%"}}>
                 <option value="January">January</option>
                 <option value="February">February</option>
@@ -67,7 +67,7 @@ const TransactionAdder = (props) => (
             </select>
         </TransactionAdderInput>
         <TransactionAdderInput>
-            <label for="yearInput" style={{paddingRight:"10px"}}> Year: </label>
+            <label htmlFor="yearInput" style={{paddingRight:"10px"}}> Year: </label>
             <select id="yearInput" style={{width:"100%"}}>
                 {nextFiveYears().map((cur, i) => { return <option key={i} value={cur}>{cur}</option>})}
             </select>

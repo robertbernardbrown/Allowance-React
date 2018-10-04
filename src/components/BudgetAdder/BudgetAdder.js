@@ -46,11 +46,11 @@ const nextFiveYears = () => {
 const BudgetAdder = (props) => (
     <BudgetAdderDiv>
         <BudgetAdderInput>
-            <label for="budgetInput" style={{paddingRight:"10px"}}> Budget: </label>
+            <label htmlFor="budgetInput" style={{paddingRight:"10px"}}> Budget: </label>
             <input type="text" style={{width:"100%"}} name="budget" placeholder="0" className="budgetInput" id="budgetInput"></input>
         </BudgetAdderInput>
         <BudgetAdderInput>
-            <label for="monthInput" style={{paddingRight:"10px"}}> Month: </label>
+            <label htmlFor="monthInput" style={{paddingRight:"10px"}}> Month: </label>
             <select id="monthInput" style={{width:"100%"}}>
                 <option value="January">January</option>
                 <option value="February">February</option>
@@ -67,7 +67,7 @@ const BudgetAdder = (props) => (
             </select>
         </BudgetAdderInput>
         <BudgetAdderInput>
-            <label for="yearInput" style={{paddingRight:"10px"}}> Year: </label>
+            <label htmlFor="yearInput" style={{paddingRight:"10px"}}> Year: </label>
             <select id="yearInput" style={{width:"100%"}}>
                 {nextFiveYears().map((cur, i) => { return <option key={i} value={cur}>{cur}</option>})}
             </select>

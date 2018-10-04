@@ -34,10 +34,11 @@ class Main extends Component {
     render(){
         return(
             <React.Fragment>
-                <Header/>
                 <Display budget={this.state.budgets} component={BarChart}/>
                 <Display component={BudgetAdder}/>
                 <Display component={TransactionAdder}/>
+                <br/>
+                <a href="/logout">Logout</a>
             </React.Fragment>
         )
     }
