@@ -44,7 +44,7 @@ class App extends Component {
             <PropsRoute exact path="/transactions" component={Contact} />
             <PropsRoute path="/logout" component={LogoutFunction} toggleAuthenticateStatus={this.toggleAuthenticateStatus}/> */}
           </Switch>
-      </Router>
+      </Router> 
       </React.Fragment>
     );
   }
