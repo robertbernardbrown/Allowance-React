@@ -12,7 +12,9 @@ import { BrowserRouter as Router, Link, Switch} from "react-router-dom";
 class App extends Component {
 
   state = {
-    authenticated: false
+    authenticated: false,
+    userId: "",
+    token: ""
   }
 
   componentDidMount() {
@@ -22,7 +24,7 @@ class App extends Component {
 
   toggleAuthenticateStatus = () => {
     // check authenticated status and toggle state based on that
-    this.setState({ authenticated: Auth.isUserAuthenticated() })
+    this.setState({ authenticated: Auth.isUserAuthenticated(), userId: Auth.getUser(), token: Auth.getToken()});
   }
 
   render() {
@@ -35,7 +37,9 @@ class App extends Component {
             <Main exact path="/main" token={this.state.token} ></Main> */}
             <PropsRoute exact path="/" component={this.state.authenticated ? Main : LoginPage}
                                       toggleAuthenticateStatus={this.toggleAuthenticateStatus}
-                                      authenticated={this.state.authenticated}/>
+                                      authenticated={this.state.authenticated}
+                                      userId={this.state.userId}
+                                      token={this.state.token}/>
             <LoggedOutRoute path="/signup" component={SignupPage} 
                                             toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
             <PropsRoute path="/logout" component={LogoutFunction} toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>

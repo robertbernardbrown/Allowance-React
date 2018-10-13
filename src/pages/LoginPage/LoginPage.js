@@ -36,7 +36,7 @@ class LoginPage extends Component {
 
     API.login({userEmail, userPassword}).then(res => {
 
-        Auth.authenticateUser(res.data.token);
+        Auth.authenticateUser(res.data);
 
         this.props.toggleAuthenticateStatus()
 

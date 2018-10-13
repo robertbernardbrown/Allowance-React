@@ -15,6 +15,7 @@ class Main extends Component {
     }
 
     componentDidMount(){
+        console.log(this.props.token);
         API.getBudget(this.props.token, this.props.userId)
         .then(res => {
             console.log(res);
